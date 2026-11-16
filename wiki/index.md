@@ -1,16 +1,15 @@
-# 碩班外接大腦｜知識目錄
+# 碩士班知識庫｜知識目錄
 
-這是跨課程、研究與作業的共用知識庫。收錄資料時維護 Wiki，需要展示時才產生簡報。
+全庫依主題累積；通用規則見 [AGENTS.md](../AGENTS.md)。
 
-## GPS 跑步配速校正
-- [研究概述](gps/overview.md)：研究目標、來源狀態與本次作業範圍。
-- [S02 鞋上 IMU 演算法比較](gps/sources/zrenner-2018.md)：四種方法、實驗結果與適用限制。
-- [S03 都市 GNSS／PDR 融合](gps/sources/zhong-2023.md)：因子圖融合與即時處理的限制。
-- [感測器位置](gps/concepts/sensor-placement.md)：鞋上、手腕、手機的方法不能直接互換。
-- [即時與驗證](gps/concepts/realtime-validation.md)：速度、距離、位置與延遲應分別評估。
-- [方法比較與規劃](gps/syntheses/method-comparison.md)：跨來源整理及可行的下一步。
-- [待確認清單](gps/pending.md)：缺少全文、資料欄位與驗證條件。
+## GPS 跑步配速研究
+- [研究概述](gps/overview.md)：研究問題、適用範圍與第一份展示需求。
+- [鞋上 IMU 文獻](gps/sources/zrenner-2018.md)：四種跑步速度與跨步長度估計方法。
+- [GNSS／PDR 融合文獻](gps/sources/zhong-2023.md)：行人定位、因子圖與限制。
+- [感測器位置](gps/concepts/sensor-placement.md)：跨設備方法遷移的界線。
+- [即時與驗證](gps/concepts/realtime-validation.md)：分清位置、速度、距離與延遲。
+- [方法比較](gps/syntheses/method-comparison.md)：證據整合與下一步。
+- [待確認事項](gps/pending.md)：全文與資料缺口。
 
-## 維護
-[操作紀錄](log.md)｜[AI 工作手冊](../AGENTS.md)
-
+## 全庫入口
+[主題首頁](../index.html)｜[原始資料](../raw/index.html)｜[網頁筆記](index.html)｜[簡報區](../presentations/index.html)｜[更新紀錄](log.md)

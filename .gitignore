@@ -1,7 +1,8 @@
-# Local editor settings and private files
+# Local-only settings and secrets
 .obsidian/
 .env
 .env.*
 !.env.example
-# Redistribution permission not yet verified
-raw/zhong-2023-gnss-pdr-fgo.pdf
+__pycache__/
+# PDF redistribution permission not verified
+raw/gps/zhong-2023-gnss-pdr-fgo.pdf

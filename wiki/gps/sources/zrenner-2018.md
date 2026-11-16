@@ -1,6 +1,6 @@
 # S02｜鞋上 IMU 跑步速度與步長演算法比較
 狀態：已閱讀本地 PDF 的研究內容 pp.1–20；圖表數值以所列頁碼核對。
-來源：[PDF](../../../raw/zrenner-2018-running-imu-algorithms.pdf)；[DOI](https://doi.org/10.3390/s18124194)。
+來源：[PDF](../../../raw/gps/zrenner-2018-running-imu-algorithms.pdf)；[DOI](https://doi.org/10.3390/s18124194)。
 作者：Markus Zrenner、Stefan Gradl、Ulf Jensen、Martin Ullrich、Bjoern M. Eskofier；2018。
 
 ## 研究設計

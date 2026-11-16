@@ -1,46 +1,46 @@
-# 碩班外接大腦
+# 碩士班知識庫
 
-由 AI 協助維護的長期學習知識庫。第一個主題是「GPS 訊號不佳時的跑步配速校正」。本次成果是來源、Wiki 與靜態 HTML 展示，尚未實作配速模型。
+依主題整理論文、課程、研究與作業的個人知識庫。AI 協助整理與維護，使用者負責挑來源、閱讀、提問與決定方向。目前第一個主題是 GPS 跑步配速研究。
 
-## 開啟展示
-直接雙擊根目錄 index.html；不需要 Node.js、套件安裝或 API 金鑰。
-三個內頁為研究構想、文獻方法比較、資料與驗證規劃。可捲動閱讀、用頁內按鈕／方向鍵切段，或由瀏覽器列印。
+## 開啟
+- 直接雙擊根目錄 index.html，不需啟動 Node.js。
+- 首頁選主題 → 原始資料、知識筆記、簡報與展示。
+- 原始資料與簡報區也有全庫入口，依主題分類。
+- Wiki 同時保留 Markdown 與網頁版；Obsidian 開啟整個資料夾即可讀原始筆記。
 
-## 檔案結構
-- AGENTS.md：跨主題通用 AI 工作規則。
-- raw/：Notion 研究構想、兩份論文 PDF、四筆論文清單與取得狀態。
-- wiki/index.md：全庫筆記目錄。
-- wiki/gps/：研究概述、來源筆記、概念、綜合比較與待確認事項。
-- wiki/log.md：操作紀錄。
-- pages/gps/：三個 HTML 展示內頁。
-- assets/：本地共用 CSS 與段落導覽 JavaScript。
-- index.html：展示首頁。
+## 分工
+AGENTS.md 是全庫通用規則；具體研究內容、讀者、單次作業要求放在 wiki/<slug>/overview.md。
+raw/<slug>/ 保留來源；wiki/<slug>/ 保存理解與連結；pages/<slug>/ 放按需產生的展示。
+topics.json 登錄實際已有的主題、來源與展示，scripts/build.py 產生首頁與索引。
 
-## 生成與更新 SOP
-1. 選擇可信來源，放入 raw；保留來源與版本。
-2. 請 AI 先讀 AGENTS.md，再執行 Ingest：閱讀、更新來源筆記與概念、加入交叉連結。
-3. 更新 wiki/index.md 與 wiki/log.md；未知事項寫進 pending。
-4. 需要報告時，根據 Wiki 生成／更新 HTML 與首頁。
-5. 檢查來源、數字、連結與手機排版。
+## 更新流程
+1. 將新來源放進對應 raw/<slug>/，記錄來源網址與取得狀態。
+2. 請 AI 先讀 AGENTS.md，再整理來源筆記、概念與比較，更新索引與紀錄。
+3. 在 topics.json 更新來源與展示清單。
+4. 執行 python scripts/build.py，生成主題入口、來源清單、Wiki 網頁與簡報目錄。
+5. 檢查本地連結與手機排版；授權發布後提交 GitHub。
 
-示範指令：「請先讀 AGENTS.md，收錄 raw 裡的新資料，更新 GPS 主題相關筆記與索引，回報尚未確認的事項。這次不用生成簡報。」
+Python 生成器僅用標準函式庫，不需要安裝套件；如系統沒有 python 指令，指定可用的 Python 執行檔。
+生成器不更動原始來源、Markdown 筆記與已存在的展示內頁；這些內容由 AI 依指示編輯。
+不要直接修改生成的首頁／索引／Wiki HTML，應修改 topics.json、Markdown 或 scripts/build.py 後重建。
 
-## 本次來源與限制
-- S01：使用者 Notion 研究構想，屬需求與假說。
-- S02：Zrenner et al. (2018)，DOI https://doi.org/10.3390/s18124194 。閱讀研究章節；鞋上 IMU 研究，不能直接推廣為手腕效果。PDF p.22 標示 CC BY 4.0；作者署名詳來源筆記。
-- S03：Zhong et al.，https://arxiv.org/abs/2212.14264v2 ，本地為 2023 arXiv v2。研究行人手機定位，即時滑動視窗列為未來工作；PDF 再散布授權未確認。
-- S04、S05 僅本地書目，尚無 PDF 全文。
-- 尚無個人活動檔分析、模型訓練、獨立速度驗證與手錶部署。
-- HTML 中軌跡圖為原創概念示意，非實測數據。
-- 內頁 Markdown 連結在瀏覽器可能顯示純文字或下載；HTML 導覽不依賴 Markdown 渲染。
+## 新增主題
+依 AGENTS.md 的「新增一個主題」流程，建立 raw/<slug>/ 與 wiki/<slug>/overview.md，再於 topics.json 增加一筆主題。
+例如之後加入 machine-learning，重建後首頁會出現它；不需要複製整個知識庫，也不強迫先做簡報。
 
-## GitHub 繳交
-將可公開的完整專案提交，包括 AGENTS.md、raw 來源描述與允許再散布的材料、wiki、assets、pages、index.html 與本說明。請勿只交 HTML。
-S03 本地 PDF 暫以 .gitignore 排除；公開版本保留文獻入口與下載指令，待授權確認再決定是否納入。PDF 不在 GitHub 時，原始檔連結需先依下方指令補回本機；HTML 的外部原文連結仍可使用。
-GitHub Pages 如啟用，選擇儲存庫根目錄作為網站來源。尚未建立或上傳 GitHub 儲存庫。
+## 展示與限制
+GPS 的三個展示頁屬第一份研究介紹，並非整個知識庫的永久主題。既有 pages/gps/problem.html、methods.html、validation.html 網址保持不變。
+目前尚無個人跑步資料實驗、配速模型訓練與手錶部署。
+放入 raw 不會自動觸發 AI；需啟動代理並交代處理，也不會自動上傳 GitHub。
 
-補回 S03 PDF（PowerShell，在專案根目錄執行）：
-```powershell
-Invoke-WebRequest -Uri 'https://arxiv.org/pdf/2212.14264v2' -OutFile 'raw/zhong-2023-gnss-pdr-fgo.pdf'
-```
-尚未確認的再散布授權不能由「可下載」推定；本機閱讀可保留原檔。
+## 來源與公開範圍
+S01 是使用者構想。S02 Zrenner et al. (2018)，DOI https://doi.org/10.3390/s18124194 ，PDF p.22 標示 CC BY 4.0；作者與適用限制見 Wiki。
+S03 Zhong et al. arXiv v2：https://arxiv.org/abs/2212.14264v2 ，本地 PDF 再散布授權未確認，以 .gitignore 排除，網站直接連到原文。S04、S05 全文仍待取得。
+raw/gps/README.md 保留首次取得紀錄，因此其中檔名依舊存在，但舊記錄中的資料夾配置以本說明為準。
+公開的儲存庫只包含已授權的主題；未來新增私人資料不代表自動授權公開。
+
+## 部署
+沿用 GitHub Pages：main 分支、/(root)。.nojekyll 讓 HTML 和來源檔以靜態檔案提供，不轉換 Markdown。更新後仍需等待 GitHub 部署完成。
+
+- 專案：https://github.com/Lee-Pin-Ying/master-brain-homework
+- 網站：https://lee-pin-ying.github.io/master-brain-homework/

@@ -1,6 +1,6 @@
 # S03｜都市峽谷 GNSS／PDR 因子圖融合
 狀態：已閱讀本地 PDF 研究內容 pp.1–9；使用 arXiv v2，不代表已讀期刊版本。
-來源：[PDF](../../../raw/zhong-2023-gnss-pdr-fgo.pdf)；[arXiv v2](https://arxiv.org/abs/2212.14264v2)。
+來源：[PDF](https://arxiv.org/pdf/2212.14264v2)；[arXiv v2](https://arxiv.org/abs/2212.14264v2)。
 作者：Yihan Zhong、Weisong Wen、Li-Ta Hsu。首版 2022，本地版本 2023。
 
 ## 在研究什麼

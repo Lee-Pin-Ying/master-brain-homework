@@ -16,7 +16,7 @@ S03 校園 Table 2 中，加 SMM 後的 RMSE 並非最佳（p.6），提醒我�
 - 分別看速度誤差、突變反應延遲、累積距離與低品質路段表現。
 - 用獨立參考速度／距離評估；已知總距離只能驗證總量，不能自動提供逐秒真值。
 - 先查明活動檔案的欄位來源，避免用 GPS 衍生的速度或步長作獨立真值。
-最後兩點亦延續 [S01 研究構想](../../../raw/research-proposal.md)，不是已完成實驗。
+最後兩點亦延續 [S01 研究構想](../../../raw/gps/research-proposal.md)，不是已完成實驗。
 
 ## 相關筆記
 [S02](../sources/zrenner-2018.md)｜[S03](../sources/zhong-2023.md)｜[研究規劃](../syntheses/method-comparison.md)
